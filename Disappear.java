@@ -17,8 +17,13 @@ public class Disappear {
 		driver.get("http://www.leafground.com/pages/disapper.html");
 		WebDriverWait ExWait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		ExWait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("btn")));
-		String txtdsp = driver.findElement(By.tagName("strong")).getText();
-		System.out.println(txtdsp);
+		boolean Button = driver.findElement(By.xpath("//button[@id = 'btn']")).isDisplayed();
+		if (Button != true) {
+			System.out.println("The button has Disappeared");
+		} else {
+			System.out.println("The button has not disappeared");
+		}
+		System.out.println(driver.findElement(By.tagName("strong")).getText());
 		
 	}
 }
