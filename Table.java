@@ -26,7 +26,9 @@ public class Table {
 			for (int j = 0; j < listColumns.size(); j++) {
 				if (listColumns.get(j).getText().contains("Learn to interact with Elements")) {
 					System.out.println(listColumns.get(1).getText());
-					break;
+				}
+				else if(listColumns.get(j).getText().contains("Learn to interact using Keyboard, Actions")) {
+					driver.findElement(By.xpath("(//tr[@class='even']//input)[2]")).click();
 				}
 
 			}
